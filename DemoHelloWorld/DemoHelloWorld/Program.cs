@@ -20,6 +20,10 @@ namespace DemoHelloWorld
                 suma += c;
             }
 
+
+            // aici suma nu va fi 1000 asa cum ne asteptam din cauza faptului ca
+            // nu toate cele 1 milion de valori de la pasul precedent sunt rerezentabile exact. 
+
             if (Math.Abs(suma - 1000) < epsilon)
             {
                 Console.WriteLine("Detonte bomb!");
