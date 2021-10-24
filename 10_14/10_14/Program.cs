@@ -31,12 +31,12 @@ namespace _10_14
             var baza = int.Parse(Console.ReadLine());
             
             Console.Write("Numarul care va fi transformat: ");
-            var nr = Console.ReadLine();
+            var numar = Console.ReadLine();
             
             Console.Write("Baza in care va fi scris numarul: ");
-            var baza_noua = int.Parse(Console.ReadLine());
+            var bazaNoua = int.Parse(Console.ReadLine());
             
-            Console.WriteLine($"Numarul {nr}, transformat din baza {baza} in {baza_noua} este: {ConvertFromBase10(ConvertToBase10D(nr, baza), baza_noua)}");
+            Console.WriteLine($"Numarul {numar}, transformat din baza {baza} in {bazaNoua} este: {ConvertFromBase10(ConvertToBase10D(numar, baza), bazaNoua)}");
         }
 
         /// <summary>
@@ -67,15 +67,15 @@ namespace _10_14
             if (baza == 10)
                 return int.Parse(val);
 
-            int valoare_finala = 0;
+            int valoareFinala = 0;
             int index = val.Length - 1;
             foreach (var x in val)
             {
-                valoare_finala += Convert.ToInt32(Math.Pow(baza, index) * (('0' <= x && '9' >= x) ? x - '0' : x - 'A'));
+                valoareFinala += Convert.ToInt32(Math.Pow(baza, index) * (('0' <= x && '9' >= x) ? x - '0' : x - 'A'));
                 index -= 1;
             }
 
-            return valoare_finala;
+            return valoareFinala;
         }
 
         /// <summary>
@@ -87,13 +87,13 @@ namespace _10_14
         private static string ConvertFromBase10(double numar, int baza)
         {
             StringBuilder sb = new StringBuilder();
-            int numar_intreg = (int) numar;
+            int numarIntreg = (int) numar;
 
-            while (numar_intreg != 0)
+            while (numarIntreg != 0)
             {
-                int x = numar_intreg % baza;
+                int x = numarIntreg % baza;
                 sb.Insert(0, (x < 10 ? (char) ('0' + x) : (char) ('A' + (x - 10))));
-                numar_intreg /= baza;
+                numarIntreg /= baza;
             }
 
             //Daca valoarea are zecimale.
