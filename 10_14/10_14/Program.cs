@@ -14,6 +14,8 @@ namespace _10_14
 
             //Conversie();
             Conversii.Conversie();
+            Console.WriteLine("Press any key to stop...");
+            Console.ReadKey();
         }
 
         /// <summary>
@@ -158,9 +160,12 @@ namespace _10_14
     {
         public static void Conversie()
         {
+            Console.Write("Introduceti numarul: ");
             string n = Console.ReadLine();
             int b1, b2;
+            Console.Write("Baza sursa = ");
             b1 = int.Parse(Console.ReadLine());
+            Console.Write("Baza tinta = ");
             b2 = int.Parse(Console.ReadLine());
             if (b1 < 2 && b1 > 16 || b2 < 2 && b2 > 16)
             {
@@ -271,6 +276,10 @@ namespace _10_14
                 }
             }
 
+            if(sb2.ToString() == ".")
+            {
+                return sb.ToString();
+            }
             return sb.ToString() + sb2.ToString();
         }
     }
